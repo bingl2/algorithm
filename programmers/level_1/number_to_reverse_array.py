@@ -13,9 +13,9 @@ num	     return
 def solution(num):
     answer = []
 
-    # num 을 문자열로 바꾼 후 배열으 돌린다.
-    for str_num in str(num):
-        # 먼저 나온수가 뒤집어 져야하니 합칠 때 앞에 배열에 추가한다.
-        answer = [int(str_num)] + answer
+    # reversed 를 활용하여 먼저 뒤집어 주도록 리팩토링 진행.
+    for str_num in reversed(str(num)):
+        # 그래도 아직 문자열 형태이기 때문에 int 형으로 바꿔준다.
+        answer.append(int(str_num))
 
     return answer
