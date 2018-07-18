@@ -31,7 +31,7 @@ def solution(month, day):
     return answer[index]
 
 
-print(solution(1, 1)) # FRI
-print(solution(1, 8)) # FRI
-print(solution(2, 29)) # MON
-print(solution(12, 31)) # SAT
+assert solution(1, 1) == "FRI"
+assert solution(1, 8) == "FRI"
+assert solution(2, 29) == "MON"
+assert solution(12, 31) == "SAT"

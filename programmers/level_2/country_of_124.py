@@ -64,11 +64,12 @@ def solution(num):
     return answer
 
 
-print(solution(1)) # 1
-print(solution(9)) # 24
-print(solution(13)) # 111
-print(solution(24)) # 214
-print(solution(100)) # 4141
+assert solution(1) == "1"
+assert solution(9) == "24"
+assert solution(13) == "111"
+assert solution(24) == "214"
+assert solution(100) == "4141"
+
 
 """
 걸린 시간 : 4시간

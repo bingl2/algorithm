@@ -38,7 +38,7 @@ def solution(string):
     return answer
 
 
-print(solution("try hello world")) # TrY HeLlO WoRlD
+assert solution("try hello world") == "TrY HeLlO WoRlD"
 
 
 """
