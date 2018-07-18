@@ -19,3 +19,7 @@ def solution(num):
         answer.append(int(str_num))
 
     return answer
+
+
+assert solution(100) == [0, 0, 1]
+assert solution(12345) == [5, 4, 3, 2, 1]
