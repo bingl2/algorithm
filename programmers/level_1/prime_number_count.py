@@ -5,7 +5,7 @@
 (1은 소수가 아닙니다.)
 
 제한 조건
-n은 2이상 1000000이하의 자연수입니다.
+n은 2이상 1,000,000이하의 자연수입니다.
 
 입출력 예
 n	result
@@ -19,20 +19,30 @@ n	result
 입출력 예 #2
 1부터 5 사이의 소수는 [2,3,5] 3개가 존재하므로 3를 반환
 """
+import time
 
 
 def solution(n):
-    target_array = list(range(2, n + 1))
+    answer_array = list(range(2, n + 1))
+    eratos_range = list(range(2, int(n ** 0.5 + 1)))
 
-    for num in target_array:
-        b_array = target_array[target_array.index(num):]
-        for b in b_array:
-            if num != b:
-                if b % num == 0:
-                    target_array.remove(b)
+    for er_num in eratos_range:
+        for check_num in answer_array:
+            if check_num != er_num:
+                if check_num % er_num == 0:
+                    answer_array.remove(check_num)
 
-    return len(target_array)
+    return len(answer_array)
 
 
-assert solution(10) == 4
-assert solution(5) == 3
+startTime = time.time()
+
+assert solution(10000) == 1229
+
+endTime = time.time() - startTime
+
+print(endTime)
+# assert solution(10000) == 1229
+# assert solution(20000) == 2262
+
+
