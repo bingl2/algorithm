@@ -28,6 +28,7 @@ def runtime(func):
         start_time = time.time()
         result = func(*args)
 
+        print(func.__name__ + " (1 ~ " + "{:,}".format(*args) + ")")
         print(time.time() - start_time)
 
         return result
@@ -101,10 +102,7 @@ def best_solution(n):
     return primes.count(True)
 
 
-print("빙글이 솔루션 (1 ~ 10,000)")
 assert bingl2_solution(10000) == 1229
-
-print("베스트 솔루션 (1 ~ 1,000,000)")
 assert best_solution(1000000) == 78498, best_solution(1000000)
 
 
