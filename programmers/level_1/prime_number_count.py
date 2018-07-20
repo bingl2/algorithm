@@ -19,9 +19,22 @@ n	result
 입출력 예 #2
 1부터 5 사이의 소수는 [2,3,5] 3개가 존재하므로 3를 반환
 """
-import time
 
 
+def runtime(func):
+    import time
+
+    def print_time(*args):
+        start_time = time.time()
+        result = func(*args)
+
+        print(time.time() - start_time)
+
+        return result
+    return print_time
+
+
+@runtime
 def bingl2_solution(n):
     # 에라토스테네스의 체를 활용하였다.
     # 정답 리스트를 만듬
@@ -52,7 +65,8 @@ def bingl2_solution(n):
 
 # 출처는 위키피디아에서 가져왔다. 정말 체가 무엇인지 보여주는 코드였다. 리스트 하나 하나의 비교 연산이 아닌, 자리수로 체를 쳐버리는데 보고 감격을 먹었다.
 # 소수 구하는 함수야 정말 빠르게 만들었는데 10만에서, 100만으로 가면 갈수록 속도가 느려져서 답이 안보였는데 정말 명쾌한 답을 보았다.
-def best_answer(n):
+@runtime
+def best_solution(n):
     # n 의 값을 지속적으로 사용하는데, 배열을 만들때 * n 을 하면서, 0의 자리를 0으로 사용하였다. 그래서 + 1 을 해줬다.
     # 예를 들어 5를 넣어 돌린다고 했을 경우 [True, True, True, True, True], [0, 1, 2, 3, 4] 를 하는데 밑에 줄을 보면 0과 1을 None 처리를 한다.
     # 그래서 임의로 1칸을 더 늘려 갯수를 맞췄다. [None(0), None(0), True(2), True(3), True(4), True(5)]
@@ -87,23 +101,11 @@ def best_answer(n):
     return primes.count(True)
 
 
-startTime = time.time()
-assert bingl2_solution(10000) == 1229
-endTime = time.time() - startTime
-
 print("빙글이 솔루션 (1 ~ 10,000)")
-print(endTime)
-
-
-startTime = time.time()
-assert best_answer(1000000) == 78498, best_answer(1000000)
-endTime = time.time() - startTime
+assert bingl2_solution(10000) == 1229
 
 print("베스트 솔루션 (1 ~ 1,000,000)")
-print(endTime)
-
-# assert solution(10000) == 1229
-# assert solution(20000) == 2262
+assert best_solution(1000000) == 78498, best_solution(1000000)
 
 
 """
