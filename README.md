@@ -1,15 +1,11 @@
-## 알고리즘 공부를 왜 시작했는가
+## 알고리즘 시작 이유
 
-{: refdef: style="text-align: center;"}
 ![Alt text](/images/want_airplane.gif)
-{: refdef}
 > 내가 원하는 기능 
 
 <br>
 
-{: refdef: style="text-align: center;"}
 ![Alt text](/images/airplane.gif)
-{: refdef}
 > 내가 구현한 기능 
 
 ## 알고리즘 문제 풀기
