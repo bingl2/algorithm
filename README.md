@@ -1,18 +1,13 @@
 ## 알고리즘 시작 이유
 
 <img width="350" src="/images/want_airplane.gif" alt="image" title="want">
-
 > 내가 원하는 기능 
 
 <br>
 
 <img width="150" height="150" src="/images/airplane.gif" alt="image" title="real">
-
 > 내가 구현한 기능 
-
-
  
-
 ## 알고리즘 문제 풀기
 
 알고리즘 공부 목적으로 문제를 풀고 있습니다. 아래의 알고리즘 문제 사이트들의 문제를 풀고 있으며 Python 3 기반으로 풀고 있습니다.
