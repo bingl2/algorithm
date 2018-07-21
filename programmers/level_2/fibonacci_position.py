@@ -68,3 +68,7 @@ assert second_solution(5000) == 1178031
 assert second_solution(10000) == 1107030
 assert second_solution(100000) == 1168141
 assert second_solution(200000) == 672799
+
+# 숫자가 커질 수록 확실히 리스트 길이가 늘어나면서 영향을 끼치기 시작하는 것을 확인할 수 있었다.
+# 재귀함수를 사용 할 경우 수가 크면 클수록 횟수가 많아져 비효율적일것 으로 예상되어 간단한 for 문으로 종료.
+# 재귀 엽슨으로 확실히 좋은 예제 인것 같다.
