@@ -1,14 +1,12 @@
 ## 알고리즘 시작 이유
 
 <img width="350" src="/images/want_airplane.gif" alt="image" title="want">
-<br>
 
 > 내가 원하는 기능 
 
 <br>
 
 <img width="150" height="150" src="/images/airplane.gif" alt="image" title="real">
-<br>
 
 > 내가 구현한 기능 
 
