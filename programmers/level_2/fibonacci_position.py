@@ -35,6 +35,30 @@ def first_solution(position):
     return fibo_list[position] % 1234567
 
 
-assert first_solution(3) == 2, first_solution(3)
+assert first_solution(3) == 2
 assert first_solution(5) == 5
 assert first_solution(1000) == 138544
+
+
+# 원하는 포지션 값에서 "1234567"을 나눈 나머지를 구해주면 되니 리스트를 빼고 작성.
+def second_solution(position):
+    first, second = 0, 1
+
+    # postion 수 만큼 돌면서 원하는 값을 뽑아낸다. 내가 맨 처음에 찾아낸 공통점을 구현한 것이다.
+    for count in range(position):
+        # 이해를 돕기 위한 수식, 첫수와 두번째 수를 더해 세번째 수를 만들어내고, 첫수에는 두번째 수를, 두번쨰 수에는 세번째 수를
+        # third = first + second
+        # first = second
+        # second = third
+
+        #굳이 third 를 만들지 않아도 가능하다.
+        first, second = second, first + second
+
+    # 0, 1부터 시작하여 N회를 돌기 때문에 first 가 된다.
+    # ex) N이 5일 경우 포문을 돌고 난 후 first, second 값 (1, 1), (1, 2), (2, 3), (3, 5), (5, 8)
+    return first % 1234567
+
+
+assert second_solution(3) == 2
+assert second_solution(5) == 5
+assert second_solution(1000) == 138544
