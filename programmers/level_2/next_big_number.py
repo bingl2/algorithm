@@ -24,39 +24,46 @@ n	result
 """
 
 
+# 굳이 2진수 전체 배열을 알 필요가 없다고 판단이 들어, 1의 개수만 파악하도록 로직을 구성하였다.
 def binary_number_one_count(number):
+    # 변수 초기화
     one_count = 0
+
     while number > 0:
+        # 간단하게 숫자르 2진수로 변환할 경우 나머지가 1일 경우 무조건 해당 자리를 1로 채우게 된다.
         number, remainder = divmod(number, 2)
 
+        # 그래서 나머지가 1일 경우, 1카운트를 증가시킨다.
         if remainder == 1:
             one_count += 1
 
+    # 반복문이 끝나고 나면 1을 센 갯수를 넣어준다.
     return one_count
 
 
-def solution(n):
-    answer = n
+def solution(number):
+    # 숫자를 넣으면 2진수로 변환 후 1의 개수를 구해주는 함수 실행.
+    one_count = binary_number_one_count(number)
 
-    # 일단 들어온 n 이라는 숫자를 2진수로 바꾸는 기능을 구현하자. 정답의 n은 굳이 리스트로 만들 필요 없이 1이 찍히는 것들을 세면 될것 같다.
-    one_count = binary_number_one_count(answer)
-
-    # 이제 n 보다 큰 수들을 하나씩 2진수로 바꿔나가며 1의 개수를 확인해보자.
+    # 찾았는지를 확인해주는 변수 선언.
     is_find = False
 
-    # 혹시 n 보다 큰 수들 중에서 1의 개수가 같을 수 있는 상황들이 공톰점이 있을 수 있는지 확인 해보자.
+    # 찾을 경우 루프를 끝낸다.
     while not is_find:
-        answer += 1
+        # 숫자를 계속 더해가며 확인을 한다.
+        number += 1
 
-        find_one_count = binary_number_one_count(answer)
+        # 2진수 변환 후 1 개수 찾기 진행.
+        find_one_count = binary_number_one_count(number)
 
-        # 1의 갯수가 같은 n 보다 큰수가 나오면 거기서 멈추고 answer 로 돌려준다.
+        # 찾을 경우 루프를 종료한다.
         if one_count == find_one_count:
             is_find = True
 
-    return answer
+    # 증가된 값을 리천해준다.
+    return number
 
 
 # assert solution(6) == 83
 assert solution(78) == 83, solution(78)
-assert solution(15) == 23
+assert solution(15) == 23, solution(15)
