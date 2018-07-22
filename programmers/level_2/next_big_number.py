@@ -28,3 +28,7 @@ def solution(n):
     answer = 0
 
     return answer
+
+
+assert solution(78) == 83
+assert solution(15) == 23
