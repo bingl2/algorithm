@@ -24,17 +24,30 @@ n	result
 """
 
 
+def binary_number_one_count(number):
+    one_count = 0
+    while number > 0:
+        number, remainder = divmod(number, 2)
+
+        if remainder == 1:
+            one_count += 1
+
+    return one_count
+
+
 def solution(n):
     answer = 0
+    one_count = binary_number_one_count(n)
 
     # 일단 들어온 n 이라는 숫자를 2진수로 바꾸는 기능을 구현하자. 정답의 n은 굳이 리스트로 만들 필요 없이 1이 찍히는 것들을 세면 될것 같다.
-
     # 이제 n 보다 큰 수들을 하나씩 2진수로 바꿔나가며 1의 개수를 확인해보자.
+
     # 혹시 n 보다 큰 수들 중에서 1의 개수가 같을 수 있는 상황들이 공톰점이 있을 수 있는지 확인 해보자.
     # 1의 갯수가 같은 n 보다 큰수가 나오면 거기서 멈추고 answer 로 돌려준다.
 
     return answer
 
 
-assert solution(78) == 83
+# assert solution(6) == 83
+assert solution(78) == 83, solution(78)
 assert solution(15) == 23
