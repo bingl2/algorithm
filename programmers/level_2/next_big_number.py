@@ -67,3 +67,10 @@ def solution(number):
 # assert solution(6) == 83
 assert solution(78) == 83, solution(78)
 assert solution(15) == 23, solution(15)
+
+
+"""
+진수를 구하는 문제를 이미 앞에서 풀었다보니 생각보다 쉽게 풀 수 있었다.
+
+1을 구하는 함수에, 최대 1 카운트 값을 넣을 경우에 1을 카운팅하다 한계 값을 넘어가면 다음 루프를 돌리는 것도 좋을 것 같다.
+"""
