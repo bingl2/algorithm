@@ -110,7 +110,7 @@ venv.bak/
 ### Python Patch ###
 .venv/
 
-./interview
+./interview/*
 
 
 # End of https://www.gitignore.io/api/python
